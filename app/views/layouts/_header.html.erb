@@ -1,0 +1,30 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to Shoppe.settings.store_name, root_path, class: 'navbar-brand' %>
+    </div>
+    <% if current_order %>
+      <ul class="nav navbar-nav pull-right">
+        <li class="dropdown">
+          <a href="#" class="basket" data-toggle="dropdown"></a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation">
+              <div class="container">
+                <p>
+                  You have <%= pluralize current_order.total_items, 'item'%> in your basket which cost
+                  <%= number_to_currency current_order.total_before_tax %>.
+                </p>
+                <%= link_to 'Checkout', checkout_path, class:'btn btn-success' %>
+              </div>
+            </li>
+            <li role="presentation" class="divider"></li>
+            <li>
+              <%= link_to 'View basket', basket_path, class:'to-basket'  %>
+            </li>
+          </ul>
+          <span class="total_items"><%= current_order.total_items %></span>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</nav>
