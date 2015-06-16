@@ -7,25 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <%= link_to 'Shop', root_path, class: 'navbar-brand' %>
-    </div>
-    <% if current_order %>
-      <ul class="nav navbar-nav pull-right">
-        <li><%= link_to 'Checkout', checkout_path %></li>
-        <li><%= link_to 'View basket', basket_path  %></li>
-      </ul>
-    <% end %>
-  </div>
-</nav>
+<%= render 'layouts/header' %>
 <div class="jumbotron">
   <div class="container">
-    <div class="alert alert-success">
-      You have <%= pluralize current_order.total_items, 'item'%> in your basket which cost
-      <%= number_to_currency current_order.total_before_tax %>.
-    </div>
     <% flash.each do |key, value|%>
       <div class="alert alert-<%= key %>">
         <%= value %>

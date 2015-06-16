@@ -2,3 +2,43 @@
 @import "bootstrap";
 @import 'bootstrap/theme';
 
+.nav.navbar-nav.pull-right .basket {
+  background: transparent image-url('shopping-cart.png') no-repeat right top ;
+  height: 50px;
+  width: 61px;
+}
+
+.dropdown {
+  .dropdown-menu.dropdown-menu-right {
+    min-width: 300px;
+  }
+
+  .total_items {
+    background: #fb3f4c none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    height: 1.35294em;
+    line-height: 1.35294em;
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top: 2px;
+    width: 1.35294em;
+    z-index: 1;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .to-basket {
+    background: transparent image-url('small-basket') no-repeat left center;
+    padding: 5px 0 5px 40px;
+    margin-left: 10px;
+    &:hover {
+      background: transparent image-url('small-basket') no-repeat left center;
+      color: #398439;
+    }
+  }
+}
