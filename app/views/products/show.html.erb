@@ -1,19 +1,17 @@
-<div class="container">
-  <h2><%= @product.name %></h2>
+<h2><%= @product.name %></h2>
 
-  <% if @product.default_image %>
-    <%= image_tag @product.default_image.path, :width => '200px', :style => "float:right" %>
-  <% end %>
+<% if @product.default_image %>
+  <%= image_tag @product.default_image.path, :width => '200px', :style => "float:right" %>
+<% end %>
 
-  <p><%= @product.short_description %></p>
-  <p>
-    <b><%= number_to_currency @product.price %></b>
-    <%= link_to 'Add to basket', product_path(@product.permalink), class: 'btn btn-success', :method => :post %>
-  </p>
+<p><%= @product.short_description %></p>
+<p>
+  <b><%= number_to_currency @product.price %></b>
+  <%= link_to 'Add to basket', product_path(@product.permalink), class: 'btn btn-success', :method => :post %>
+</p>
 
-  <hr>
-  <%= simple_format @product.description %>
-  <hr>
+<hr>
+<%= simple_format @product.description %>
+<hr>
 
-  <p><%= link_to '<< Back to list', root_path, class: 'btn btn-default' %></p>
-</div>
+<p><%= link_to '<< Back to list', root_path, class: 'btn btn-default' %></p>
