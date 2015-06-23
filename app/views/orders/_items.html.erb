@@ -1,11 +1,11 @@
 <table class='table table-bordered'>
   <thead>
   <tr>
-    <td>Quantity</td>
-    <td>Product</td>
-    <td>Sub-Total</td>
-    <td>Tax</td>
-    <td>Total</td>
+    <td><%= t('table.quantity') %></td>
+    <td><%= t('table.product') %></td>
+    <td><%= t('table.sub_total') %></td>
+    <td><%= t('table.tax') %></td>
+    <td><%= t('table.total') %></td>
   </tr>
   </thead>
   <tbody>
@@ -32,15 +32,15 @@
   </tbody>
   <tfoot>
   <tr>
-    <td colspan='4'>Sub-Total</td>
+    <td colspan='4'><%= t('table.sub_total') %></td>
     <td><%= number_to_currency order.total_before_tax %></td>
   </tr>
   <tr>
-    <td colspan='4'>Tax</td>
+    <td colspan='4'><%= t('table.tax') %></td>
     <td><%= number_to_currency order.tax %></td>
   </tr>
   <tr>
-    <td colspan='4'>Total</td>
+    <td colspan='4'><%= t('table.total') %></td>
     <td><%= number_to_currency order.total %></td>
   </tr>
   </tfoot>

@@ -1,3 +1,32 @@
+GIT
+  remote: git://github.com/svenfuchs/rails-i18n.git
+  revision: 804b142d46f171f130c38a48ceab7019e8a7465d
+  branch: master
+  specs:
+    rails-i18n (4.0.4)
+      i18n (~> 0.6)
+      railties (~> 4.0)
+
+GIT
+  remote: https://github.com/tryshoppe/shoppe
+  revision: 2c2babaf58a0c526fcdbd96c4cd2afb106e922fb
+  specs:
+    shoppe (1.0.7)
+      awesome_nested_set (~> 3.0.1)
+      bcrypt (>= 3.1.2, < 3.2)
+      dynamic_form (~> 1.1, >= 1.1.4)
+      globalize
+      haml (>= 4.0, < 5.0)
+      jquery-rails (>= 3, < 4.1)
+      kaminari (>= 0.14.1, < 0.17)
+      nifty-attachments (>= 1.0.3, < 2.0.0)
+      nifty-dialog (>= 1.0.7, < 1.1)
+      nifty-key-value-store (>= 1.0.1, < 2.0.0)
+      nifty-utils (>= 1.0, < 1.1)
+      rails (>= 4.0.0, < 5.0)
+      ransack (>= 1.2.0, < 1.6.3)
+      roo (>= 1.13.0, < 1.14)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -66,6 +95,9 @@ GEM
     execjs (2.5.2)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    globalize (5.0.1)
+      activemodel (>= 4.2.0, < 4.3)
+      activerecord (>= 4.2.0, < 4.3)
     haml (4.0.6)
       tilt
     i18n (0.7.0)
@@ -76,6 +108,9 @@ GEM
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     json (1.8.3)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
@@ -159,20 +194,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    shoppe (1.0.7)
-      awesome_nested_set (~> 3.0.1)
-      bcrypt (>= 3.1.2, < 3.2)
-      dynamic_form (~> 1.1, >= 1.1.4)
-      haml (>= 4.0, < 5.0)
-      jquery-rails (>= 3, < 4.1)
-      kaminari (>= 0.14.1, < 0.17)
-      nifty-attachments (>= 1.0.3, < 2.0.0)
-      nifty-dialog (>= 1.0.7, < 1.1)
-      nifty-key-value-store (>= 1.0.1, < 2.0.0)
-      nifty-utils (>= 1.0, < 1.1)
-      rails (>= 4.0.0, < 5.0)
-      ransack (>= 1.2.0, < 1.6.3)
-      roo (>= 1.13.0, < 1.14)
     slop (3.6.0)
     spreadsheet (1.0.3)
       ruby-ole (>= 1.0)
@@ -209,13 +230,15 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-turbolinks
   pg
   pry
   rails (= 4.2.0)
+  rails-i18n!
   rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  shoppe (~> 1.0)
+  shoppe!
   spring
   sqlite3
   turbolinks

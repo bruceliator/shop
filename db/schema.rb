@@ -34,6 +34,22 @@ ActiveRecord::Schema.define(version: 20150615101826) do
     t.string  "value"
   end
 
+  create_table "shoppe_addresses", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.string   "address_type"
+    t.boolean  "default"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "address3"
+    t.string   "address4"
+    t.string   "postcode"
+    t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shoppe_addresses", ["customer_id"], name: "index_shoppe_addresses_on_customer_id"
+
   create_table "shoppe_countries", force: :cascade do |t|
     t.string  "name"
     t.string  "code2"
@@ -42,6 +58,17 @@ ActiveRecord::Schema.define(version: 20150615101826) do
     t.string  "tld"
     t.string  "currency"
     t.boolean "eu_member", default: false
+  end
+
+  create_table "shoppe_customers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "company"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "mobile"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "shoppe_delivery_service_prices", force: :cascade do |t|
@@ -134,6 +161,7 @@ ActiveRecord::Schema.define(version: 20150615101826) do
     t.decimal  "amount_paid",               precision: 8, scale: 2, default: 0.0
     t.boolean  "exported",                                          default: false
     t.string   "invoice_number"
+    t.integer  "customer_id"
   end
 
   add_index "shoppe_orders", ["delivery_service_id"], name: "index_shoppe_orders_on_delivery_service_id"
@@ -197,6 +225,33 @@ ActiveRecord::Schema.define(version: 20150615101826) do
 
   add_index "shoppe_product_categorizations", ["product_category_id"], name: "categorization_by_product_category_id"
   add_index "shoppe_product_categorizations", ["product_id"], name: "categorization_by_product_id"
+
+  create_table "shoppe_product_category_translations", force: :cascade do |t|
+    t.integer  "shoppe_product_category_id", null: false
+    t.string   "locale",                     null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "name"
+    t.string   "permalink"
+    t.text     "description"
+  end
+
+  add_index "shoppe_product_category_translations", ["locale"], name: "index_shoppe_product_category_translations_on_locale"
+  add_index "shoppe_product_category_translations", ["shoppe_product_category_id"], name: "index_75826cc72f93d014e54dc08b8202892841c670b4"
+
+  create_table "shoppe_product_translations", force: :cascade do |t|
+    t.integer  "shoppe_product_id", null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "name"
+    t.string   "permalink"
+    t.text     "description"
+    t.text     "short_description"
+  end
+
+  add_index "shoppe_product_translations", ["locale"], name: "index_shoppe_product_translations_on_locale"
+  add_index "shoppe_product_translations", ["shoppe_product_id"], name: "index_shoppe_product_translations_on_shoppe_product_id"
 
   create_table "shoppe_products", force: :cascade do |t|
     t.integer  "parent_id"

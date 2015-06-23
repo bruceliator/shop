@@ -20,4 +20,35 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  theme:
+    header:
+      lang: "Language"
+      total_items:
+        one: "You have 1 item in your basket which cost"
+        other: "You have %{count} items in your basket which cost"
+  buttons:
+    view_basket: "View basket"
+    checkout: "Checkout"
+    empty_basket: "Empty basket"
+    place_order: "Place order"
+    item_details: "View details »"
+    add_to_basket: "Add to basket"
+    back: "<< Back to list"
+  flash:
+    item_added: "Product has been added successfuly!"
+    basket_emptied: "Basket emptied successfully."
+    order_placed: "Order has been placed successfully!"
+  table:
+    quantity: "Quantity"
+    product: "Product"
+    sub_total: "Sub-Total"
+    tax: "Tax"
+    total: "Total"
+  titles:
+    basket: "Your basket"
+    place_order: "Place your order"
+    checkout: "Checkout"
+    products: "Products"
+  language:
+    ua: "Ukrainian"
+    en: "English"

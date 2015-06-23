@@ -2,6 +2,10 @@
 @import "bootstrap";
 @import 'bootstrap/theme';
 
+body {
+  padding-bottom: 40px;
+}
+
 .nav.navbar-nav.pull-right .basket {
   background: transparent image-url('<%= asset_path 'shopping-cart.png' %>') no-repeat right top ;
   height: 50px;
@@ -44,7 +48,52 @@
 }
 
 .shop-name {
-  color: white;
   margin-top: 10px;
   font-size: 20px;
+
+  a:hover {
+    text-decoration: none;
+    color: #337ab7;
+  }
 }
+
+.featurette-divider {
+  margin: 80px 0;
+}
+
+.to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  display: none;
+  font-size: 20px;
+  width: 52px;
+  height: 52px;
+  background: transparent image-url('acapo_icons_web_top.png') no-repeat left top;
+  &:hover {
+    background-position: 0px -52px;
+  }
+}
+.dropdown {
+  .en {
+    padding-left: 32px;
+    background: transparent image-url('en.png') no-repeat left top;
+    &:hover {
+      background-image: image-url('en.png');
+      background-repeat: no-repeat;
+      background-color: #E8E8E8;
+    }
+  }
+
+  .ua {
+    padding-left: 32px;
+    background: transparent image-url('ua.png') no-repeat left top;
+    &:hover {
+      background-image: image-url('ua.png');
+      background-repeat: no-repeat;
+      background-color: #E8E8E8;
+    }
+  }
+}
+
+
