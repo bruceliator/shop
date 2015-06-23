@@ -8,6 +8,28 @@ ua:
   buttons:
     view_basket: "Перегляд корзини"
     checkout: "Замовлення"
+    empty_basket: "Очистити корзину"
+    place_order: "Оформити замовлення"
+    item_details: "Детальніше >>"
+    add_to_basket: "В корзину"
+    back: "<< Назад до списку"
+  flash:
+    item_added: "Товар доданий успішно!"
+    basket_emptied: "Корзина очищена успішно"
+    order_placed: "Замовлення було оформлено успішно"
+  table:
+    quantity: "Кількість"
+    product: "Товар"
+    sub_total: "Проміжна сума"
+    tax: "Податок"
+    total: "Загальна сума"
+  titles:
+    basket: "Ваша корзина"
+    place_order: "Оформіть Ваше замовлення"
+    products: "Товари"
+  language:
+    ua: "Українська"
+    en: "Англійська"
   activerecord:
     models:
       shoppe/country:

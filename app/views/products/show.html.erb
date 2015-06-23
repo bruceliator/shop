@@ -7,11 +7,11 @@
 <p><%= @product.short_description %></p>
 <p>
   <b><%= number_to_currency @product.price %></b>
-  <%= link_to 'Add to basket', product_path(@product.permalink), class: 'btn btn-success', :method => :post %>
+  <%= link_to t('buttons.add_to_basket'), product_path(@product.permalink), class: 'btn btn-success', :method => :post %>
 </p>
 
 <hr>
 <%= simple_format @product.description %>
 <hr>
 
-<p><%= link_to '<< Back to list', root_path, class: 'btn btn-default' %></p>
+<p><%= link_to t('buttons.back'), root_path, class: 'btn btn-default' %></p>
