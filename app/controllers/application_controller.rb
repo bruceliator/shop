@@ -10,11 +10,6 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
-  def change_locale
-    set_locale
-    redirect_to root_url
-  end
-
   private
 
   def current_order

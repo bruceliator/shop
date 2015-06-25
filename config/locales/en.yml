@@ -52,3 +52,9 @@ en:
   language:
     ua: "Ukrainian"
     en: "English"
+  sidemenu:
+    main: "Main"
+    about: "About us"
+    contacts: "Contacts"
+  product:
+    price: "Price"

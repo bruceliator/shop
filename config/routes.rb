@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount Shoppe::Engine => "/shoppe"
-  scope "(:locale)", locale: /en|ua/ do
+  scope ":locale", locale: /en|ua/ do
     get 'product/:permalink', to: 'products#show', as: 'product'
     post 'product/:permalink', to: 'products#buy', as: 'buy'
     root 'products#index'
@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     match 'checkout', to: 'orders#checkout', as: 'checkout', via: [:get, :patch]
     match 'checkout/pay', to: 'orders#payment', as: 'checkout_payment', via: [:get, :post]
     match 'checkout/confirm', to: 'orders#confirmation', as: 'checkout_confirmation', via: [:get, :post]
-    get 'application/change_locale', as: 'change_locale'
   end
+  match '*path', to: redirect("/#{I18n.locale}/%{path}"), via: [:get, :post]
+  match '', to: redirect("/#{I18n.locale}"), via: [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
