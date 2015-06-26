@@ -5,12 +5,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Shoppe::Product.find_by_permalink(params[:permalink])
+    @product = Shoppe::Product.joins(:translations).find_by_permalink(params[:permalink])
   end
 
   def buy
-    @product = Shoppe::Product.find_by_permalink!(params[:permalink])
+    @product = Shoppe::Product.joins(:translations).find_by_permalink!(params[:permalink])
     current_order.order_items.add_item(@product, 1)
-    redirect_to product_path(@product.permalink), :notice => "Product has been added successfuly!"
+    flash[:success] = t('flash.item_added')
+    redirect_to product_path(@product.permalink)
   end
 end

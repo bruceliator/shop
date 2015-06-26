@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   mount Shoppe::Engine => "/shoppe"
-  get "product/:permalink", to: "products#show", as: "product"
-  post "product/:permalink", to: "products#buy", as: "buy"
-  root to: "products#index"
-  get "basket", to: "orders#show"
-  delete "basket", to: "orders#destroy"
-  match "checkout", to: "orders#checkout", as: "checkout", via: [:get, :patch]
-  match "checkout/pay", to: "orders#payment", as: "checkout_payment", via: [:get, :post]
-  match "checkout/confirm", to: "orders#confirmation", as: "checkout_confirmation", via: [:get, :post]
+  scope ":locale", locale: /en|ua/ do
+    get 'product/:permalink', to: 'products#show', as: 'product'
+    post 'product/:permalink', to: 'products#buy', as: 'buy'
+    root 'products#index'
+    get 'basket', to: 'orders#show'
+    delete 'basket', to: 'orders#destroy'
+    match 'checkout', to: 'orders#checkout', as: 'checkout', via: [:get, :patch]
+    match 'checkout/pay', to: 'orders#payment', as: 'checkout_payment', via: [:get, :post]
+    match 'checkout/confirm', to: 'orders#confirmation', as: 'checkout_confirmation', via: [:get, :post]
+  end
+  match '*path', to: redirect("/#{I18n.locale}/%{path}"), via: [:get, :post]
+  match '', to: redirect("/#{I18n.locale}"), via: [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

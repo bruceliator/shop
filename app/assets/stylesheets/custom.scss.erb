@@ -1,0 +1,197 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap/theme';
+
+body {
+  background-color: #f7f7f7;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+}
+
+nav.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+
+
+.nav.navbar-nav.pull-right .basket {
+  background: transparent image-url('<%= asset_path 'shopping-cart.png' %>') no-repeat right top ;
+  height: 50px;
+  width: 61px;
+}
+
+.dropdown {
+  .dropdown-menu.dropdown-menu-right {
+    min-width: 300px;
+  }
+
+  .total_items {
+    background: #fb3f4c none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    height: 1.35294em;
+    line-height: 1.35294em;
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top: 2px;
+    width: 1.35294em;
+    z-index: 1;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .to-basket {
+    background: transparent image-url('small-basket') no-repeat left center;
+    padding: 5px 0 5px 40px;
+    margin-left: 10px;
+    &:hover {
+      background: transparent image-url('small-basket') no-repeat left center;
+      color: #398439;
+    }
+  }
+}
+
+.shop-name {
+  margin-top: 10px;
+  font-size: 20px;
+
+  a:hover {
+    text-decoration: none;
+    color: #337ab7;
+  }
+}
+
+.featurette-divider {
+  margin: 80px 0 0 0;
+}
+
+.to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  display: none;
+  font-size: 20px;
+  width: 52px;
+  height: 52px;
+  background: transparent image-url('acapo_icons_web_top.png') no-repeat left top;
+  &:hover {
+    background-position: 0px -52px;
+  }
+}
+.dropdown {
+  .en {
+    padding-left: 32px;
+    background: transparent image-url('en.png') no-repeat left top;
+    &:hover {
+      background-image: image-url('en.png');
+      background-repeat: no-repeat;
+      background-color: #E8E8E8;
+    }
+  }
+
+  .ua {
+    padding-left: 32px;
+    background: transparent image-url('ua.png') no-repeat left top;
+    &:hover {
+      background-image: image-url('ua.png');
+      background-repeat: no-repeat;
+      background-color: #E8E8E8;
+    }
+  }
+}
+.wrapper {
+  background: #b84d45 image_url('bg.jpg') repeat fixed 0 0;
+  background-size: cover;
+}
+
+#back {
+  height: 200px;
+}
+
+footer {
+  background-color: #fff;
+  padding: 40px 0 40px 0;
+  a {
+    color: #000;
+    transition: color 0.3s ease 0s;
+    &:hover {
+      color: #9b59b6;
+    }
+  }
+  .visa_master_logo {
+    background: transparent image_url('3d-secure-logos2.png') no-repeat 0 0;
+    display: block;
+    width: 125px;
+    height: 44px;
+    float: right;
+    margin-right: 100px;
+  }
+  .copyright {
+    line-height: 44px;
+  }
+}
+
+.sidebar-module {
+  margin: 0 -15px 15px;
+  padding: 15px;
+}
+
+.sidebar-module-inset {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+hr.star-primary::after {
+  background-color: #f7f7f7;
+  color: #2c3e50;
+}
+hr.star-light::after, hr.star-primary::after {
+  content: "";
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 2em;
+  padding: 0 0.25em;
+  position: relative;
+  top: -0.8em;
+}
+
+hr.star-primary {
+  border-color: #2c3e50;
+}
+hr.star-light, hr.star-primary {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: -moz-use-text-color;
+  border-image: none;
+  border-style: solid none none;
+  border-width: 5px 0 0;
+  margin: 25px auto 30px;
+  max-width: 250px;
+  padding: 0;
+  text-align: center;
+}
+
+.row.title h2 {
+  font-size: 3em;
+  margin: 0;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}

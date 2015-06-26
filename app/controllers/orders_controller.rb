@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   def destroy
     current_order.destroy
     session[:order_id] = nil
-    redirect_to root_path, :notice => "Basket emptied successfully."
+    redirect_to root_path, :notice => t('flash.basket_emptied')
   end
 
   def checkout
@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
     if request.post?
       current_order.confirm!
       session[:order_id] = nil
-      redirect_to root_path, :notice => "Order has been placed successfully!"
+      redirect_to root_path, :notice => t('flash.order_placed')
     end
   end
 end

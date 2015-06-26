@@ -1,18 +1,21 @@
-<div class="container">
-  <h2>Products</h2>
-    <% @products.each do |category, products| %>
-      <h3><%= category.name %></h3>
-        <% products.each_slice(3) do |array_of_three| %>
-          <div class="row">
-            <% array_of_three.each do |product|%>
-              <div class="col-lg-4">
-                <h4><%= link_to product.name, product_path(product.permalink) %></h4>
-                <p><%= product.short_description %></p>
-                <p><b>Price:</b> <%= number_to_currency product.price %></p>
-                <%= link_to 'View details »', product_path(product.permalink), class: 'btn btn-primary' %>
-              </div>
-            <% end %>
+<div class="row title">
+  <div class="col-lg-12 text-center">
+    <h2><%= t('titles.products') %></h2>
+    <hr class="star-primary">
+  </div>
+</div>
+<% @products.each do |category, products| %>
+  <h3><%= category.name %></h3>
+    <% products.each_slice(3) do |array_of_three| %>
+      <div class="row">
+        <% array_of_three.each do |product|%>
+          <div class="col-lg-4">
+            <h4><%= link_to product.name, product_path(product.permalink) %></h4>
+            <p><%= product.short_description %></p>
+            <p><b><%= t('product.price') %>:</b> <%= number_to_currency product.price %></p>
+            <%= link_to t('buttons.item_details'), product_path(product.permalink), class: 'btn btn-primary' %>
           </div>
         <% end %>
+      </div>
+    <% end %>
 <% end %>
-</div>
