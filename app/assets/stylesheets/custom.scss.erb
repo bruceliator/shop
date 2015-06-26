@@ -3,8 +3,26 @@
 @import 'bootstrap/theme';
 
 body {
-  padding-bottom: 40px;
+  background-color: #f7f7f7;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+}
+
+nav.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+
 
 .nav.navbar-nav.pull-right .basket {
   background: transparent image-url('<%= asset_path 'shopping-cart.png' %>') no-repeat right top ;
@@ -58,7 +76,7 @@ body {
 }
 
 .featurette-divider {
-  margin: 80px 0;
+  margin: 80px 0 0 0;
 }
 
 .to-top {
@@ -95,5 +113,85 @@ body {
     }
   }
 }
+.wrapper {
+  background: #b84d45 image_url('bg.jpg') repeat fixed 0 0;
+  background-size: cover;
+}
 
+#back {
+  height: 200px;
+}
 
+footer {
+  background-color: #fff;
+  padding: 40px 0 40px 0;
+  a {
+    color: #000;
+    transition: color 0.3s ease 0s;
+    &:hover {
+      color: #9b59b6;
+    }
+  }
+  .visa_master_logo {
+    background: transparent image_url('3d-secure-logos2.png') no-repeat 0 0;
+    display: block;
+    width: 125px;
+    height: 44px;
+    float: right;
+    margin-right: 100px;
+  }
+  .copyright {
+    line-height: 44px;
+  }
+}
+
+.sidebar-module {
+  margin: 0 -15px 15px;
+  padding: 15px;
+}
+
+.sidebar-module-inset {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+hr.star-primary::after {
+  background-color: #f7f7f7;
+  color: #2c3e50;
+}
+hr.star-light::after, hr.star-primary::after {
+  content: "";
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 2em;
+  padding: 0 0.25em;
+  position: relative;
+  top: -0.8em;
+}
+
+hr.star-primary {
+  border-color: #2c3e50;
+}
+hr.star-light, hr.star-primary {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: -moz-use-text-color;
+  border-image: none;
+  border-style: solid none none;
+  border-width: 5px 0 0;
+  margin: 25px auto 30px;
+  max-width: 250px;
+  padding: 0;
+  text-align: center;
+}
+
+.row.title h2 {
+  font-size: 3em;
+  margin: 0;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}

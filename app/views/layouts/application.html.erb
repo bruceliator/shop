@@ -7,20 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="wrapper">
+  <section id="back">
+  </section>
+</div>
 <%= render 'layouts/header' %>
-<div class="jumbotron">
-  <div class="container">
-    <% flash.each do |key, value|%>
-      <div class="alert alert-<%= key %>">
-        <%= value %>
-      </div>
-  <% end %>
+<div class="container main">
+  <div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-xs-12 col-sm-9">
+      <% flash.each do |key, value|%>
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/sidebar' %>
   </div>
 </div>
-
-<div class="container">
-  <%= yield %>
-  <%= render 'layouts/footer' %>
-</div>
+<%= render 'layouts/footer' %>
 </body>
 </html>
