@@ -36,6 +36,11 @@ ua:
     contacts: "Контакти"
   product:
     price: "Цiна"
+  about:
+    description: "Ми невелика команда висококваліфікованих Ruby on Rails-розробників, які розробляють системи, що задовольняють всі ваші бізнес потреби."
+    title: "Про нас"
+  contacts:
+    title: "Контакти"
   activerecord:
     models:
       shoppe/country:

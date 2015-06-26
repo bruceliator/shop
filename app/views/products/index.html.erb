@@ -1,4 +1,9 @@
-<h2><%= t('titles.products') %></h2>
+<div class="row title">
+  <div class="col-lg-12 text-center">
+    <h2><%= t('titles.products') %></h2>
+    <hr class="star-primary">
+  </div>
+</div>
 <% @products.each do |category, products| %>
   <h3><%= category.name %></h3>
     <% products.each_slice(3) do |array_of_three| %>

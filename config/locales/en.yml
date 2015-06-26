@@ -58,3 +58,8 @@ en:
     contacts: "Contacts"
   product:
     price: "Price"
+  about:
+    title: "About"
+    description: "Active Bridge is an intentionally small team of highly technical Ruby on Rails developers who can develop systems tailored to meet all your business needs."
+  contacts:
+    title: "Contact us"
