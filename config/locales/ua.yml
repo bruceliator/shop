@@ -27,6 +27,7 @@ ua:
     basket: "Ваша корзина"
     place_order: "Оформіть Ваше замовлення"
     products: "Товари"
+    checkout: "Замовлення"
   language:
     ua: "Українська"
     en: "Англійська"
