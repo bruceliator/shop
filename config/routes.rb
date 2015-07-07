@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   mount Shoppe::Engine => "/shoppe"
   scope ":locale", locale: /en|ua/ do
+    devise_for :users
     get 'product/:permalink', to: 'products#show', as: 'product'
     post 'product/:permalink', to: 'products#buy', as: 'buy'
-    root 'products#index'
+    root :to => 'products#index'
     get 'basket', to: 'orders#show'
     delete 'basket', to: 'orders#destroy'
     match 'checkout', to: 'orders#checkout', as: 'checkout', via: [:get, :patch]
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
     delete 'basket/:order_item_id' => 'orders#change_item_quantity'
     delete 'basket/delete/:order_item_id' => 'orders#remove_item', :as => 'remove_basket_item'
   end
-  match '*path', to: redirect("/#{I18n.locale}/%{path}"), via: [:get, :post]
+  match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }, via: [:get, :post]
   match '', to: redirect("/#{I18n.locale}"), via: [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
