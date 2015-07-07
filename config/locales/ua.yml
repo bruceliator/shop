@@ -27,6 +27,10 @@ ua:
     basket: "Ваша корзина"
     place_order: "Оформіть Ваше замовлення"
     products: "Товари"
+    sign_up: "Реєстрація"
+    sign_in: "Вхід"
+    forgot_pass: "Забули пароль"
+    change_pass: "Змінити пароль"
   language:
     ua: "Українська"
     en: "Англійська"
@@ -41,6 +45,20 @@ ua:
     title: "Про нас"
   contacts:
     title: "Контакти"
+  devise:
+    sessions:
+      signed_in: "Вхід виконано успішно."
+    confirmations:
+      user:
+        confirmed: "Ваш акаунт був успішно підтверджений"
+    registrations:
+      user:
+        signed_up_but_unconfirmed: "Повідомлення з посиланням для підтвердження відправлено на Ваш email. Будь ласка, перейдіть по посиланню для активації Вашого облікового запису."
+  mailer:
+    confirmation:
+      welcome: "Ласкаво просимо"
+      message: "Ви можете підтвердити ваш акаунт через посилання нижче:"
+      confirm: "Підтвердити акаунт"
   activerecord:
     models:
       shoppe/country:
