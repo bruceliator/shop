@@ -69,15 +69,42 @@ en:
   contacts:
     title: "Contact us"
   devise:
+    resend_confirm: "Resend confirmation instructions"
+    confirm_new_pass: "Confirm new password"
+    new_pass: "New password"
+    back: "Back"
+    sure: "Are you sure?"
+    cancel_account: "Cancel my account"
     sessions:
       signed_in: "Signed in successfully."
     confirmations:
       user:
         confirmed: "Your email address has been successfully confirmed."
     registrations:
+      errors:
+        one: "The form contains 1 error"
+        other: "The form contains %{count} errors"
       user:
         signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
+    links:
+      send_reset_pass: "Send me reset password instructions"
+      change_pass: "Change my password"
+      forgot: "Forgot your password?"
+      not_receive: "Didn't receive confirmation instructions?"
+      not_receive_unlock: "Didn't receive unlock instructions?"
+      sign_out: "Sign out"
+      sign_in: "Sign in"
+      sign_up: "Sign up"
   mailer:
+    unlock_instructions:
+      unlock: "Unlock my account"
+      subject: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+      click_link: "Click the link below to unlock your account:"
+    hello_message: "Hello"
+    reset_password:
+      subject: "Someone has requested a link to change your password. You can do this through the link below."
+      warning_1: "If you didn't request this, please ignore this email."
+      warning_2: "Your password won't change until you access the link above and create a new one."
     confirmation:
       welcome: "Welcome"
       message: "You can confirm your account email through the link below:"
