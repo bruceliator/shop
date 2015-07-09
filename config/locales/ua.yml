@@ -1,4 +1,7 @@
 ua:
+  errors:
+    messages:
+      not_saved: "Не збережено"
   theme:
     header:
       lang: "Мова"
@@ -46,15 +49,51 @@ ua:
   contacts:
     title: "Контакти"
   devise:
+    failure:
+      already_authenticated: "Ви вже увійшли в свій акаунт"
+      user:
+        invalid: "Невірний логін або пароль."
+    passwords:
+      user:
+        send_instructions: "Ви отримаєте email з інструкціями як змінити пароль впродовж декількох хвилин."
+    resend_confirm: "Переслати ще раз інструкції"
+    confirm_new_pass: "Ще раз"
+    new_pass: "Новий пароль"
+    back: "Назад"
+    sure: "Ви впевнені?"
+    cancel_account: "Скасувати свій аккаунт"
     sessions:
       signed_in: "Вхід виконано успішно."
+      user:
+        signed_out: "Вихід виконано успішно"
     confirmations:
       user:
         confirmed: "Ваш акаунт був успішно підтверджений"
     registrations:
+      errors:
+        one: "Форма містить 1 помилку"
+        other: "Форма містить %{count} помилок"
       user:
         signed_up_but_unconfirmed: "Повідомлення з посиланням для підтвердження відправлено на Ваш email. Будь ласка, перейдіть по посиланню для активації Вашого облікового запису."
+    links:
+      send_reset_pass: "Надіслати інструкції"
+      change_pass: "Змінити пароль"
+      forgot: "Забули пароль?"
+      not_receive: "Не отримали інструкції по підтвердженю акаунта?"
+      not_receive_unlock: "Не отримали інструкції по відновленню пароля?"
+      sign_out: "Вийти"
+      sign_in: "Увійти"
+      sign_up: "Зареєструватися"
   mailer:
+    unlock_instructions:
+      unlock: "Розблокувати акаунт"
+      click_link: "Для відновлення акаунту натисніть посилання нижче"
+      subject: "Ваш акаунт заблоковано, тому що було вичерпано кількість невдалих спроб."
+    hello_message: "Привіт"
+    reset_password:
+      subject: "Хтось просив посилання на зміну вашого пароля. Ви можете зробити це через посилання нижче."
+      warning_1: "Якщо Ви не робили запит на зміну пароля - ігноруйте це повідомлення"
+      warning_2: "Ваш пароль не буде змінено доки ви не перейдете за посиланням і не створите новий."
     confirmation:
       welcome: "Ласкаво просимо"
       message: "Ви можете підтвердити ваш акаунт через посилання нижче:"
@@ -171,14 +210,36 @@ ua:
         last_name: Last name
         password: Password
         password_confirmation: Password confirmation
+      user:
+        password: "Пароль"
+        first_name: "Ім'я"
+        last_name: "Прізвище"
+        address: "Адреса"
+        phone: "Телефон"
     errors:
+      messages:
+        not_saved: "Не збережено"
       template:
-        body: ! 'There were problems with the following fields:'
+        body: ! 'Thre were problems with the following fields:'
         header:
           one: 1 error prohibited this %{model} from being saved
           many: ! '%{count} errors prohibited this %{model} from being saved'
           other: ! '%{count} errors prohibited this %{model} from being saved'
       models:
+        user:
+          attributes:
+            email:
+              blank: "не може бути порожнім"
+            password:
+              blank: "не може бути порожнім"
+            address:
+              blank: "не може бути порожньою"
+            phone:
+              blank: "не може бути порожнім"
+            first_name:
+              blank: "не може бути порожнім"
+            last_name:
+              blank: "не може бути порожнім"
         shoppe/product_category:
           attributes:
             permalink:
@@ -226,6 +287,15 @@ ua:
       multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
 
   helpers:
+    label:
+      user:
+        password: "Пароль"
+        remember_me: "Запам'ятати мене"
+        password_confirmation: "Ще раз"
+        first_name: "Ім'я"
+        last_name: "Прізвище"
+        address: "Адреса"
+        phone: "Телефон"
     number_to_weight:
       kg: kg
     page_entries_info:

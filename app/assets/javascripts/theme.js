@@ -17,24 +17,26 @@ $(document).ready(function () {
 
   var fixed = false,
       nav       = document.getElementById('navigation'),
-      position  = nav.offsetTop,
-      $container = $('.container.main'),
-      o1 = $('#navigation').offset(),
-      o2 = $container.offset(),
-      dy = o2.top - o1.top;
+      position  = nav.offsetTop;
 
   function stick(){
     var scrollY = window.scrollY || window.pageYOffset;
     if (scrollY > position && !fixed) {
       fixed = true;
       nav.className = nav.className + ' fixed';
-      $container.css('padding-top', dy + 'px');
     } else if (scrollY <= position && fixed) {
       fixed = false;
       nav.classList.remove('fixed');
-      $container.css('padding-top', 0);
     }
   }
 
   window.onscroll = stick;
+
+  //Make flash to desepare
+
+  $(function() {
+    setTimeout(function(){
+      $('.alert').slideUp(1000);
+    }, 2000);
+  });
 });

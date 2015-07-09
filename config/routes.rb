@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount Shoppe::Engine => "/shoppe"
   scope ":locale", locale: /en|ua/ do
-    devise_for :users
+    devise_for :users, :controllers => { registrations: 'registrations' }
     get 'product/:permalink', to: 'products#show', as: 'product'
     post 'product/:permalink', to: 'products#buy', as: 'buy'
     root :to => 'products#index'
