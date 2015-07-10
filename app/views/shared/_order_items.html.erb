@@ -1,0 +1,45 @@
+<table class="orderItems table table-bordered table-striped">
+  <thead>
+  <tr>
+    <td>№</td>
+    <td><%= t('table.product') %></td>
+    <td><%= t('table.quantity') %></td>
+    <td><%= t('product.price') %></td>
+    <td><%= t('table.total') %></td>
+  </tr>
+  </thead>
+  <tbody>
+  <% order.order_items.each_with_index do |item, index |%>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td class="product">
+        <%= item.ordered_item.full_name %>
+        <% unless defined?(readonly) %>
+          <%= link_to "", remove_basket_item_path(item), :method => :delete, :class => 'delete ajax fa fa-times-circle fa-lg' %>
+        <% end %>
+      </td>
+      <td class="quantity">
+        <% unless defined?(readonly) %>
+            <span class="change_qt">
+              <%= link_to "", adjust_basket_item_quantity_path(item.id), :method => :post, :class => 'ajax fa fa-chevron-circle-up fa-lg' %>
+              <%= link_to "", adjust_basket_item_quantity_path(item.id), :method => :delete, :class => 'ajax fa fa-chevron-circle-down fa-lg' %>
+            </span>
+        <% end %>
+        <span class="badge"><%= item.quantity %></span>
+      </td>
+      <td class="money price">
+        <%= number_to_currency item.ordered_item.price %>
+      </td>
+      <td class="money total">
+        <%= number_to_currency item.total %>
+      </td>
+    </tr>
+  <% end %>
+  <tfoot>
+    <tr>
+      <td colspan="4" class="text-right"><strong><%= t('table.total') %></strong></td>
+      <td><%= number_to_currency order.total %></td>
+    </tr>
+  </tfoot>
+  </tbody>
+</table>

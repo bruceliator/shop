@@ -38,6 +38,7 @@ en:
     item_added: "Product has been added successfuly!"
     basket_emptied: "Basket emptied successfully."
     order_placed: "Order has been placed successfully!"
+    is_empty: "Your shopping bag is now empty."
   table:
     quantity: "Quantity"
     product: "Product"

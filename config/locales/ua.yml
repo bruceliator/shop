@@ -17,6 +17,7 @@ ua:
     item_added: "Товар доданий успішно!"
     basket_emptied: "Корзина очищена успішно"
     order_placed: "Замовлення було оформлено успішно"
+    is_empty: "Ваша корзина тепер пуста"
   table:
     quantity: "Кількість"
     product: "Товар"
@@ -27,6 +28,7 @@ ua:
     basket: "Ваша корзина"
     place_order: "Оформіть Ваше замовлення"
     products: "Товари"
+    checkout: "Замовлення"
   language:
     ua: "Українська"
     en: "Англійська"

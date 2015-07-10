@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     match 'checkout', to: 'orders#checkout', as: 'checkout', via: [:get, :patch]
     match 'checkout/pay', to: 'orders#payment', as: 'checkout_payment', via: [:get, :post]
     match 'checkout/confirm', to: 'orders#confirmation', as: 'checkout_confirmation', via: [:get, :post]
+    post 'basket/:order_item_id' => 'orders#change_item_quantity', :as => 'adjust_basket_item_quantity'
+    delete 'basket/:order_item_id' => 'orders#change_item_quantity'
+    delete 'basket/delete/:order_item_id' => 'orders#remove_item', :as => 'remove_basket_item'
   end
   match '*path', to: redirect("/#{I18n.locale}/%{path}"), via: [:get, :post]
   match '', to: redirect("/#{I18n.locale}"), via: [:get, :post]
