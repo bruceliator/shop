@@ -2,7 +2,13 @@ class OrdersController < ApplicationController
   def destroy
     current_order.destroy
     session[:order_id] = nil
-    redirect_to root_path, :notice => t('flash.basket_emptied')
+    respond_to do |wants|
+      wants.html { redirect_to root_path, :notice => t('flash.basket_emptied')}
+      wants.json do
+        flash[:notice] = t('flash.is_empty')
+        render :json => {:status => 'complete', :redirect => root_path}
+      end
+    end
   end
 
   def checkout
@@ -25,6 +31,36 @@ class OrdersController < ApplicationController
       current_order.confirm!
       session[:order_id] = nil
       redirect_to root_path, :notice => t('flash.order_placed')
+    end
+  end
+
+  def remove_item
+    item = current_order.order_items.find(params[:order_item_id])
+    if current_order.order_items.count == 1
+      destroy
+    else
+      item.remove
+      respond_to do |wants|
+        wants.json do
+          current_order.reload
+          render :json => {:status => 'complete', :items => render_to_string(:partial => 'shared/order_items.html', :locals => {:order => current_order})}
+        end
+      end
+    end
+  end
+
+  def change_item_quantity
+    item = current_order.order_items.find(params[:order_item_id])
+    request.delete? ? item.decrease! : item.increase!
+    respond_to do |wants|
+      wants.json do
+        current_order.reload
+        if current_order.empty?
+          destroy
+        else
+          render :json => {:status => 'complete', :items => render_to_string(:partial => 'shared/order_items.html', :locals => {:order => current_order}), quantity: current_order.total_items }
+        end
+      end
     end
   end
 end
