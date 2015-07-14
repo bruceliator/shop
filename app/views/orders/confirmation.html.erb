@@ -1,3 +1,10 @@
-<h2><%= t('titles.place_order') %></h2>
+<div class="row title">
+  <div class="col-lg-12 text-center">
+    <h2><%= t('titles.place_order') %></h2>
+    <hr class="star-primary">
+  </div>
+</div>
+<h3><%= t('titles.review_products') %></h3>
 <%= render 'shared/order_items', :order => current_order %>
-<%= button_to t('buttons.place_order')%>
+<%= render 'shared/confirm_details', :order => current_order%>
+<%= button_to t('buttons.place_order'), nil, class: 'btn btn-success btn-lg btn-block'%>

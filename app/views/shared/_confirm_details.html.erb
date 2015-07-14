@@ -1,0 +1,104 @@
+<h3 class="subtitle"><%= t('titles.complete_details') %></h3>
+<% binding.pry %>
+<%= form_for order, :url => checkout_path, :html => { :class => 'checkout disableable' } do |f| %>
+  <%= f.error_messages %>
+  <div class="customer">
+    <div class="row">
+      <div class="col-lg-6 col-sm-6">
+        <%= field_set_tag do %>
+          <dl>
+            <dt>
+              <%= f.label :first_name, t('form.name'), :class => 'req ' %>
+            </dt>
+            <dd class="name">
+              <div class="row">
+                <div class="col-lg-6">
+                  <%= f.text_field :first_name, placeholder: t('form.first_name'), class: 'form-control' %>
+                </div>
+                <div class="col-lg-6">
+                  <%= f.text_field :last_name, placeholder: t('form.last_name'), class: 'form-control' %>
+                </div>
+              </div>
+            </dd>
+          </dl>
+          <dl>
+            <dt>
+              <%= f.label :company, t('form.company_name') %>
+            </dt>
+            <dd>
+              <%= f.text_field :company, class: 'form-control' %>
+            </dd>
+          </dl>
+          <dl>
+            <dt>
+              <%= f.label :email_address, t('form.your_mail'), :class => 'req' %>
+            </dt>
+            <dd>
+              <%= f.text_field :email_address, class: 'form-control' %>
+            </dd>
+          </dl>
+          <dl>
+            <dt>
+              <%= f.label :phone_number, t('form.phone'), :class => 'req' %>
+            </dt>
+            <dd>
+              <%= f.text_field :phone_number, class: 'form-control' %>
+            </dd>
+          </dl>
+        <% end %>
+      </div>
+      <div class="col-lg-6 col-sm-6">
+        <%= field_set_tag nil, class: 'bill-address' do %>
+          <dl>
+            <dt>
+              <%= f.label :billing_address1, t('form.bill_address'), :class => 'req' %>
+            </dt>
+            <dd>
+              <%= f.text_field :billing_address1, :placeholder => t('form.line1'), class: 'form-control'%>
+            </dd>
+            <dd>
+              <%= f.text_field :billing_address3, :placeholder => t('form.town'), class: 'form-control' %>
+            </dd>
+            <dd>
+              <%= f.text_field :billing_address4, :placeholder => t('form.county'), class: 'form-control' %>
+            </dd>
+            <dd>
+              <%= f.text_field :billing_postcode, :placeholder => t('form.postcode'), class: 'postcode form-control' %>
+            </dd>
+            <dd>
+              <%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, {}, class: 'form-control' %>
+            </dd>
+            <dd>
+              <%= f.check_box :separate_delivery_address %>
+              <%= f.label :separate_delivery_address, t('form.different_deliver') %>
+            </dd>
+          </dl>
+          <dl class="delivery" style="display: none">
+            <dt>
+              <%= f.label :delivery_address1, "Delivery Address", :class => 'req' %>
+            </dt>
+            <dd>
+              <%= f.text_field :delivery_name, :placeholder => "Deliver to (name/company)", class: 'form-control' %>
+            </dd>
+            <dd>
+              <%= f.text_field :delivery_address1, :placeholder => "Line 1", class: 'form-control' %>
+            </dd>
+            <dd>
+              <%= f.text_field :delivery_address3, :placeholder => "Town/City", class: 'form-control'%>
+            </dd>
+            <dd>
+              <%= f.text_field :delivery_address4, :placeholder => "County", class: 'form-control' %>
+            </dd>
+            <dd>
+              <%= f.text_field :delivery_postcode, :placeholder => "Postcode", class: 'postcode form-control' %>
+            </dd>
+            <dd>
+              <%= f.collection_select :delivery_country_id, Shoppe::Country.ordered, :id, :name, {}, class: 'form-control' %>
+            </dd>
+          </dl>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+<% end %>

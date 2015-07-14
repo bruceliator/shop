@@ -16,6 +16,13 @@ $ ->
     else if data.status == 'error'
       alert data.message
 
+  # Show hide delivery address
+  $delivery = $('.delivery')
+  $checkbox = $('#order_separate_delivery_address')
+
+  $checkbox.change ->
+    if @checked then $delivery.show() else $delivery.hide()
+    return
   #
   # Submit a link
   #

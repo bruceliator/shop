@@ -34,6 +34,7 @@ en:
     item_details: "View details »"
     add_to_basket: "Add to basket"
     back: "<< Back to list"
+    continue_co: "Continue checkout"
   flash:
     item_added: "Product has been added successfuly!"
     basket_emptied: "Basket emptied successfully."
@@ -45,6 +46,19 @@ en:
     sub_total: "Sub-Total"
     tax: "Tax"
     total: "Total"
+  form:
+    name: "Name"
+    first_name: "First name"
+    last_name: "Last name"
+    company_name: "Company Name (optional)"
+    your_mail: "Your E-Mail Address"
+    phone: "Your Contact Phone Number"
+    bill_address: "Billing Address"
+    line1: "Line 1"
+    town: "Town/City"
+    county: "County"
+    postcode:  "Postcode"
+    differуnt_deliver: "Deliver to a different address?"
   titles:
     basket: "Your basket"
     place_order: "Place your order"
@@ -54,6 +68,8 @@ en:
     sign_in: "Sign in"
     forgot_pass: "Forgot your password?"
     change_pass: "Change password"
+    review_products: "Review the products in your shopping bag"
+    complete_details: "Complete your details below to complete your order"
   language:
     ua: "Ukrainian"
     en: "English"
