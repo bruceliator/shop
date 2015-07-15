@@ -22,7 +22,7 @@ module TestShop
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    I18n.available_locales = [:en, :ua, :fr]
+    I18n.available_locales = [:en, :ua]
     config.i18n.default_locale = :en
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end

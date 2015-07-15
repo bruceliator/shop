@@ -12,7 +12,7 @@
           <div class="col-lg-4">
             <h4><%= link_to product.name, product_path(product.permalink) %></h4>
             <p><%= product.short_description %></p>
-            <p><b><%= t('product.price') %>:</b> <%= number_to_currency product.price%></p>
+            <p><b><%= t('product.price') %>:</b> <%= number_to_currency product.price %></p>
             <%= link_to t('buttons.item_details'), product_path(product.permalink), class: 'btn btn-primary' %>
           </div>
         <% end %>

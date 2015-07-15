@@ -74,22 +74,22 @@
           </dl>
           <dl class="delivery" style="display: none">
             <dt>
-              <%= f.label :delivery_address1, "Delivery Address", :class => 'req' %>
+              <%= f.label :delivery_address1, t('form_delivery_address'), :class => 'req' %>
             </dt>
             <dd>
-              <%= f.text_field :delivery_name, :placeholder => "Deliver to (name/company)", class: 'form-control' %>
+              <%= f.text_field :delivery_name, :placeholder => t('form.deliver_to'), class: 'form-control' %>
             </dd>
             <dd>
-              <%= f.text_field :delivery_address1, :placeholder => "Line 1", class: 'form-control' %>
+              <%= f.text_field :delivery_address1, :placeholder => t('form.line1'), class: 'form-control' %>
             </dd>
             <dd>
-              <%= f.text_field :delivery_address3, :placeholder => "Town/City", class: 'form-control'%>
+              <%= f.text_field :delivery_address3, :placeholder => t('form.town'), class: 'form-control'%>
             </dd>
             <dd>
-              <%= f.text_field :delivery_address4, :placeholder => "County", class: 'form-control' %>
+              <%= f.text_field :delivery_address4, :placeholder => t('form.county'), class: 'form-control' %>
             </dd>
             <dd>
-              <%= f.text_field :delivery_postcode, :placeholder => "Postcode", class: 'postcode form-control' %>
+              <%= f.text_field :delivery_postcode, :placeholder => t('form.postcode'), class: 'postcode form-control' %>
             </dd>
             <dd>
               <%= f.collection_select :delivery_country_id, Shoppe::Country.ordered, :id, :name, {}, class: 'form-control' %>

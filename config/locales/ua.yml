@@ -54,6 +54,8 @@ ua:
     county: "Округ"
     postcode:  "Поштовий індекс"
     different_deliver: "Відправити на іншу адресу"
+    deleivery_address: "Адреса отримувача"
+    deliver_to: "Відправити (ім'я/компанія)"
   language:
     ua: "Українська"
     en: "Англійська"

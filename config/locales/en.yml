@@ -60,7 +60,9 @@ en:
     town: "Town/City"
     county: "County"
     postcode:  "Postcode"
-    differуnt_deliver: "Deliver to a different address?"
+    different_deliver: "Deliver to a different address?"
+    deleivery_address: "Delivery Address"
+    deliver_to: "Deliver to (name/company)"
   titles:
     basket: "Your basket"
     place_order: "Place your order"

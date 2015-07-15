@@ -22,11 +22,4 @@ describe OrdersController do
       assigns(:order).should_not be_nil
     end
   end
-
-  describe "PATCH checkout" do
-    it "redirects to " do
-      patch :checkout, locale: :en
-      expect(response).to redirect_to(checkout_payment_path)
-    end
-  end
 end
