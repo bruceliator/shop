@@ -1,6 +1,5 @@
 <h3 class="subtitle"><%= t('titles.complete_details') %></h3>
-<% binding.pry %>
-<%= form_for order, :url => checkout_path, :html => { :class => 'checkout disableable' } do |f| %>
+<%= form_for order, :url => send_confirm_order_path, :html => { :class => 'checkout disableable' } do |f| %>
   <%= f.error_messages %>
   <div class="customer">
     <div class="row">
@@ -13,10 +12,10 @@
             <dd class="name">
               <div class="row">
                 <div class="col-lg-6">
-                  <%= f.text_field :first_name, placeholder: t('form.first_name'), class: 'form-control' %>
+                  <%= f.text_field :first_name, placeholder: t('form.first_name'), value: current_user.first_name, class: 'form-control' %>
                 </div>
                 <div class="col-lg-6">
-                  <%= f.text_field :last_name, placeholder: t('form.last_name'), class: 'form-control' %>
+                  <%= f.text_field :last_name, placeholder: t('form.last_name'), value: current_user.last_name, class: 'form-control' %>
                 </div>
               </div>
             </dd>
@@ -34,7 +33,7 @@
               <%= f.label :email_address, t('form.your_mail'), :class => 'req' %>
             </dt>
             <dd>
-              <%= f.text_field :email_address, class: 'form-control' %>
+              <%= f.text_field :email_address, value: current_user.email, class: 'form-control' %>
             </dd>
           </dl>
           <dl>
@@ -42,7 +41,7 @@
               <%= f.label :phone_number, t('form.phone'), :class => 'req' %>
             </dt>
             <dd>
-              <%= f.text_field :phone_number, class: 'form-control' %>
+              <%= f.text_field :phone_number, value: current_user.phone, class: 'form-control' %>
             </dd>
           </dl>
         <% end %>
@@ -101,4 +100,5 @@
       </div>
     </div>
   </div>
+  <%= button_to t('buttons.place_order'), nil, class: 'btn btn-success btn-lg btn-block'%>
 <% end %>

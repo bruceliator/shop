@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     post 'basket/:order_item_id' => 'orders#change_item_quantity', :as => 'adjust_basket_item_quantity'
     delete 'basket/:order_item_id' => 'orders#change_item_quantity'
     delete 'basket/delete/:order_item_id' => 'orders#remove_item', :as => 'remove_basket_item'
+    patch 'send_confirm_order', to: 'orders#confirm_order', as: 'send_confirm_order'
   end
   match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }, via: [:get, :post]
   match '', to: redirect("/#{I18n.locale}"), via: [:get, :post]

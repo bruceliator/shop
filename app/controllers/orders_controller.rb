@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :authorize?, only: [:confirmation]
   def destroy
     current_order.destroy
     session[:order_id] = nil
@@ -62,5 +63,15 @@ class OrdersController < ApplicationController
         end
       end
     end
+  end
+
+  def confirm_order
+    ConfirmationMailer.confirm_order(current_user).deliver
+    flash[:success] = t('flash.confirmation_order_mail')
+    redirect_to root_path
+  end
+
+  def authorize?
+    redirect_to new_user_session_path unless current_user
   end
 end

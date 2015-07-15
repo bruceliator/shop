@@ -40,6 +40,10 @@
       <td colspan="4" class="text-right"><strong><%= t('table.total') %></strong></td>
       <td><%= number_to_currency order.total %></td>
     </tr>
+    <tr>
+      <td colspan="4" class="text-right"><strong><%= t('table.order_id') %></strong></td>
+      <td><%= order.id %></td>
+    </tr>
   </tfoot>
   </tbody>
 </table>

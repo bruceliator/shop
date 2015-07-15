@@ -36,6 +36,7 @@ en:
     back: "<< Back to list"
     continue_co: "Continue checkout"
   flash:
+    confirmation_order_mail: "Confirmation instructions was sent. Please, check your email"
     item_added: "Product has been added successfuly!"
     basket_emptied: "Basket emptied successfully."
     order_placed: "Order has been placed successfully!"
@@ -46,6 +47,7 @@ en:
     sub_total: "Sub-Total"
     tax: "Tax"
     total: "Total"
+    order_id: "Order number"
   form:
     name: "Name"
     first_name: "First name"
