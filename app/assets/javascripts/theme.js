@@ -39,4 +39,16 @@ $(document).ready(function () {
       $('.alert').slideUp(1000);
     }, 3000);
   });
+
+  var $proposal_check = $('#agree-proposal');
+  var $confirm_button = $('#confirm');
+  var $error_modal = $('#error_modal');
+  $confirm_button.click(function(){
+    if ($proposal_check.is(':checked')) {
+      return true
+    } else {
+      $error_modal.modal('show');
+      return false;
+    }
+  });
 });

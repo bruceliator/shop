@@ -2,6 +2,16 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   protect_from_forgery with: :exception
 
+  def after_sign_in_path_for(resource)
+    sign_in_url = new_user_session_url
+    return checkout_confirmation_path unless current_order.order_items.empty?
+    if request.referer == sign_in_url
+      super
+    else
+      stored_location_for(resource) || request.referer || root_path
+    end
+  end
+
   def default_url_options(options={})
     { locale: I18n.locale }.merge options
   end

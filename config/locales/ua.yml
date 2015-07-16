@@ -8,6 +8,8 @@ ua:
       total_items:
         one: "У вас 1 товар в корзині на суму"
         other: "У вас %{count} товарів в корзині на суму"
+    footer:
+      contract_offer: "Договір оферти"
   buttons:
     view_basket: "Перегляд корзини"
     checkout: "Замовлення"
@@ -41,6 +43,7 @@ ua:
     change_pass: "Змінити пароль"
     review_products: "Перевірка продуктів в вашій корзині"
     complete_details: "Заповніть деталі для завершення оформлення"
+    modal_confirm: "Підтвердження"
   form:
     name: "Ім'я"
     first_name: "Ім'я"
@@ -121,6 +124,11 @@ ua:
       welcome: "Ласкаво просимо"
       message: "Ви можете підтвердити ваш акаунт через посилання нижче:"
       confirm: "Підтвердити акаунт"
+  public_proposal:
+    agreement: "Згода"
+    are_you_agree: " договором публічної оферти"
+    confirm: "Підтвердити"
+    not_confirmed: "Згода з договором не підтверджена"
   activerecord:
     models:
       shoppe/country:

@@ -26,6 +26,8 @@ en:
       total_items:
         one: "You have 1 item in your basket which cost"
         other: "You have %{count} items in your basket which cost"
+    footer:
+      contract_offer: "Contract offer"
   buttons:
     view_basket: "View basket"
     checkout: "Checkout"
@@ -74,6 +76,7 @@ en:
     change_pass: "Change password"
     review_products: "Review the products in your shopping bag"
     complete_details: "Complete your details below to complete your order"
+    modal_confirm: "Confirmation"
   language:
     ua: "Ukrainian"
     en: "English"
@@ -129,3 +132,8 @@ en:
       welcome: "Welcome"
       message: "You can confirm your account email through the link below:"
       confirm: "Confirm my account"
+  public_proposal:
+    agreement: "The agreement with"
+    are_you_agree: " the contract offer"
+    confirm: "Confirm"
+    not_confirmed: "Consent to the contract has not been confirmed"
